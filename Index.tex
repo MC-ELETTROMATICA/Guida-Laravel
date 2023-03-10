@@ -1,0 +1,180 @@
+\documentclass[12pt,oneside,a4paper]{book}
+
+%{%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PACCHETTI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc} % Codifiche e gestione della lingua
+\usepackage[T1]{fontenc}    % Codifiche e gestione della lingua
+\usepackage[italian]{babel} % Codifiche e gestione della lingua
+
+\usepackage[   top = 2cm,
+            bottom = 2cm,
+             right = 2cm,
+              left = 2cm
+]{geometry} % Geometria della pagina 
+
+\usepackage{amssymb} % Libreiria matematica
+\usepackage{amsmath} % Libreiria matematica
+\usepackage{bm}      % Grassetto nelle formule
+
+\usepackage{graphicx}                   % Grafica
+\usepackage[final]{pdfpages}            % Gestione pdf esterni
+\usepackage[linktocpage=true]{hyperref} % Riferimenti
+
+\usepackage{changelog} % Gestione Changelog
+\usepackage{multicol}  % Multicolonna
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}
+
+%{%%%%%%%%%%%%%%%%%%%%%%%%%%%% SET COUNTER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{tocdepth}{1}                   % Indice generale fino alle sezioni 
+\setcounter{secnumdepth}{1}                % Numerazione fino alle sezioni
+%}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%{%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DATI LIBRO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   
+\usepackage{lmodern}
+\usepackage{color}
+\usepackage{epstopdf}
+\usepackage{matlab}
+\newcommand{\subHeadMatlab}[1]{\subsection{\textit{#1}:}}
+
+\sloppy
+\epstopdfsetup{outdir=./}
+\graphicspath{ {./script201_images/} }
+
+
+
+\usepackage{titlesec}
+\titleformat{\section}
+{\normalfont\Large\bfseries}{\thesection}{1em}{}[{\titlerule[0.8pt]}]
+    \let\stdsection\section%
+\renewcommand\section{\newpage\stdsection}% Nuova pagina ogni sezione
+
+\usepackage{siunitx,booktabs}
+\setlength{\tabcolsep}{12pt}
+\usepackage{array}
+
+%{%%%%%%%%%%%%%%%%%%%%%%%%%%%% BIBLIOGRAIA %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[autostyle, italian=guillemets,]{csquotes}
+\usepackage[backend=biber, style=alphabetic]{biblatex}
+
+\addbibresource{Bibliografia.bib} 
+\nocite{*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}
+
+%{%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INDICE ELENCHI %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addto\captionsitalian{\renewcommand{\figurename}{Grafico}}
+\addto\captionsitalian{\renewcommand{\lstlistingname}{Funzione}}
+\addto\captionsitalian{\renewcommand{\lstlistlistingname}{Lista delle Funzioni}}
+\addto\captionsitalian{\renewcommand{\listfigurename}{Lista dei Grafici}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%}
+    
+
+\newcommand{\GraphCap}[1]{\caption{#1}}
+
+
+%}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DATI LIBRO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%{%%%%%%%%%%%%%%%%% ISTRUZIONI PER GESTIRE CODICE MATLAB %%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[numbered,framed]{matlab-prettifier} % Gestione Listati
+ \lstset{%
+    numbers            = left,
+    xleftmargin        = 4em,
+    frame              = single,
+    framexleftmargin   = 2.3em,
+    style              = Matlab-editor,%
+    basicstyle         = \mlttfamily,
+    escapechar         = ,%
+    keywords           = {arguments,for,if},
+    mlshowsectionrules = true,%
+    morestring         = [m]{"},
+    literate=
+    {à}{{\ttfamily\`a}}1
+    {è}{{\ttfamily\`e}}1
+    {é}{{\ttfamily\`e}}1
+    {ì}{{\ttfamily\`i}}1
+    {ò}{{\ttfamily\`o}}1
+    {ù}{{\ttfamily\`u}}1,
+} 
+
+%}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%{%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LINEA LATERALE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{mdframed}
+\newmdenv[
+    topline           = false,
+    bottomline        = false,
+    linewidth         = 2pt,
+    innerleftmargin   = 7pt,
+    leftmargin        = 30pt,
+    rightmargin       = 30pt,
+    innerbottommargin = 0pt
+]{separator}
+
+\mdfdefinestyle{FrameArg}{%
+    outerlinewidth    = 2pt,
+    roundcorner       = 20pt,
+    innertopmargin    = \baselineskip,
+    innerbottommargin = \baselineskip,
+    innerrightmargin  = 30pt,
+    innerleftmargin   = 30pt,
+    backgroundcolor   = gray!80!white
+}
+%}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[most]{tcolorbox}
+
+%%%%% FONT%%%%5
+\newcommand{\MATLAB}{\textit{Matlab}}
+\newcommand{\CGC}{\textit{CGC}}
+
+
+
+%{%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DATI LIBRO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{GUIDA LARAVEL}
+\date{2023}
+\author{Cannavò Michele}
+%}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{imakeidx}
+
+\makeindex[columns = 2]
+
+%{%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DOCUMENT 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+  
+\input{copertina/Copertina.tex}
+
+\pagenumbering{roman}   % NUMERZIONE ROMANA PER L'IDICE
+\tableofcontents        % INDICE CAPITOLI
+%\newpage
+%\lstlistoflistings      % INDICE FUNZIONI
+%\newpage
+%\listoffigures          % INDICE FIGURE
+%\newpage
+%\listoftables           % INDICE TABELLE
+%\newpage
+\pagenumbering{arabic}  % NUMERZIONE ARABA PER LA TESINA
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\input{cap/Introduzione/Introduzione.tex}       % Introduzione
+\addcontentsline{toc}{chapter}{Introduzione}
+
+%\part{Teoria}
+%\input{cap/TeoGrafici/0Index.tex} % Teoria con esempi Matlab 
+
+%\part{Esercizi}
+\input{cap/Elementary/0Index.tex} % Esercizi dal cap2 
+
+\part{Appendici}
+\appendix
+%\input{cap/FuncUtility/FuncUtility.tex} % Funzioni commentate  
+\input{cap/Funzioni/Funzioni.tex} % Funzioni commentate
+\input{cap/Script/Script.tex} % Script commentati
+
+%\printbibliography[heading=bibintoc]
+%\input{changelog}
+
+%\addcontentsline{toc}{section}{\indexname}
+%\printindex
+\end{document}
+%}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,34 @@
+
+\section{massSphereSteel}\label{fnc:massSphereSteel}
+
+\matlabheading{Sintassi:}
+
+\begin{matlabcode}
+function mass = massSphereSteel(radius, rho)
+\end{matlabcode}
+
+\vspace{1em}
+
+\matlabheading{Argomenti:}
+
+\begin{itemize}
+\setlength{\itemsep}{-1ex}
+   \item{\begin{flushleft} \texttt{\underline{\textit{\textbf{radius}}}}\textit{: (M}\texttt{atrice numerica)}\textit{ (In tal caso ogni singolo elemento verrà convertito)} \end{flushleft}}
+   \item{\begin{flushleft} \texttt{\underline{\textit{\textbf{rho}}}}\textit{: (}\texttt{Scalare)}\textit{. Deve essere un valore non negativo.} \end{flushleft}}
+\end{itemize}
+
+\begin{matlabcode}
+    arguments
+        radius {mustBePositive}
+        rho (1,1) {mustBePositive}
+    end
+\end{matlabcode}
+
+\vspace{1em}
+
+\matlabheading{Details:}
+
+\begin{matlabcode}
+    mass = rho * 4/3 * pi * radius.^3;
+end
+\end{matlabcode}

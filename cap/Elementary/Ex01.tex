@@ -1,0 +1,34 @@
+\section{Ex2.01 Seconds}\label{sec:seconds}
+\subsection{Testo esercizio}
+\begin{itemize}
+    \item[a)] Scrivi una funzione che calcola il numero di secondi, $s$ dati il 
+    numero di ore, secondo la formula $$s = 3600*h$$
+    
+    \item[b)] Utilizzare uno script per trovare il numero di secondi in $1.5$, 
+    $12$ e $24$ ore.
+\end{itemize}
+
+\subsection{Svolgimento}
+L'esercizio è stato molto semplice e privo di difficoltà.
+
+\subsection{Risultati}
+\subsubsection{Testuali} 
+\color{gray}\begin{verbatim}
+In  1.5 ore ci sono  5400 secondi
+In 12.0 ore ci sono 43200 secondi
+In 24.0 ore ci sono 86400 secondi
+\end{verbatim}
+\color{black}
+
+\subsubsection{Tabella}    
+\input{cap/Elementary/src/data/tex/table201}
+\newpage
+
+\subsection{Codici usati}
+\lstinputlisting[caption = {\nameref{fnc:hoursToSecond}},
+linerange = {36-40}]
+{cap/Elementary/src/function/hoursToSeconds.m}%
+
+\lstinputlisting[title = {\nameref{scr:script201}},
+linerange = {31-37}]
+{cap/Elementary/src/script/script201.m}

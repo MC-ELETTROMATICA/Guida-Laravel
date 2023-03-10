@@ -1,0 +1,70 @@
+\section{massSphere}\label{fnc:massSphere}
+
+\subHeadMatlab{Sintassi}
+\lstinputlisting[linerange = {46-46}, basicstyle=\large,
+numbers=none]
+{cap/Elementary/src/function/massSphere.m}
+
+\subHeadMatlab{Descrizione breve}
+Calcola, dato un $\rho$ specifico del materiale, la massa di una 
+sfera d'acciaio, dato il raggio.
+
+%\subHeadMatlab{Argomenti}
+
+\subHeadMatlab{Input}
+\begin{tcolorbox}
+\begin{description}
+\setlength{\itemindent}{-.2in}
+   
+   \item[\textit{rho}] \verb|(1,1) {mustBePositive}|\\
+    Scalare, necessariamente con elementi positivi. Ogni conversione può essere 
+    riferita solo ad un tipo di materiale.
+    
+    \item[\textit{radius}] \verb|{mustBePositive} = 1|\\
+    Matrice. Ogni singolo elemento di essa verrà considerato come un 
+    raggio. Se non dovesse esserci default pari a 1 
+    metro.
+\end{description}
+\end{tcolorbox}
+
+\subHeadMatlab{Output}
+\begin{tcolorbox}
+    \begin{description}   
+\setlength{\itemindent}{-.2in} 
+
+        \item[\textit{mass}] \verb|size(radius)|\\
+        Matrice i cui elementi corrispondono alle masse di sfere di raggio 
+        corrispondenti agli elementi della matrice d'ingresso.
+    \end{description}  
+\end{tcolorbox}
+
+\subHeadMatlab{Vedere anche}
+{\color{gray} NONE}
+
+\subHeadMatlab{Descrizione estesa}
+La formula utilizzata é quella per il calcolo nella conversione 
+ed é semplicemente: 
+$$m=\rho\frac{4}{3}\pi r^3$$
+\lstinputlisting[ linerange = {48-48}, firstnumber=48]
+{cap/Elementary/src/function/massSphere.m}
+\pagebreak
+
+
+\subHeadMatlab{CHANGELOG}
+\begin{changelog}[author=\CGC, simple, 
+    title={Modifiche alla funzione}, 
+    label=chgf:massSphere, sectioncmd=\subsubsection*]
+
+    \shortversion{v=2.0.0, date=14/09/22, 
+        changes=Inserita la variabile rho come argomento.}
+       
+    \shortversion{v=1.0.1, date=04/09/22, 
+        changes=Insertiti commenti}
+    
+    \shortversion{v=1.0.0, date=03/09/22, 
+        changes=Inizializzazione funzione}
+\end{changelog}
+
+%\subsubsection{Listato completo}
+%\lstinputlisting[title = massSphere, basicstyle=\scriptsize]
+%{cap/Elementary/src/function/massSphere.m}%

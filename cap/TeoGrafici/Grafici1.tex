@@ -1,0 +1,95 @@
+\matlabtitle{\textbf{Gestione Grafici1}}
+
+\begin{par}
+\begin{flushleft}
+Pulizia memoria diagrammi
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+myClear(2)
+\end{matlabcode}
+
+\begin{par}
+\begin{flushleft}
+Simuliamo dei dati
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+x1 = rand(1,100);
+\end{matlabcode}
+
+\begin{par}
+\begin{flushleft}
+Tipologia di diagramma
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+diag1 = histogram(x1);
+\end{matlabcode}
+
+\begin{par}
+\begin{flushleft}
+Modifica degli attributi. Questi attributi sono da impostare SUCCESSIVAMENTE  alla creazione del diagramma 
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+t = title('Titolo');
+s = subtitle('Sottotitolo');
+xlabel('Label asse X');
+ylabel('Label asse Y');
+\end{matlabcode}
+
+\begin{par}
+\begin{flushleft}
+Alcuni attributi e possibili modificarli direttamente tramite la variabile che contiene il 
+riferimento al grafico
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+diag1.FaceColor = "m"; % Colore barre
+diag1.EdgeColor = "r"; % Colore bordo barre
+\end{matlabcode}
+
+\begin{par}
+\begin{flushleft}
+Alcuni attributi e possibili modificarli direttamentetramite la variabile che contiene il 
+riferimento al titolo
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+t.FontSize = 16;
+t.FontAngle = 'italic';
+t.Color = 'g'; % Colore bordo barre
+\end{matlabcode}
+
+\begin{par}
+\begin{flushleft}
+Alcuni attributi e possibili modificarli direttamentetramite la variabile che contiene il 
+riferimento al sottotitolo
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+s.FontSize = 10;
+s.FontAngle = 'italic';
+s.Color = 'blue'; % Colore bordo barre
+\end{matlabcode}
+
+\begin{par}
+\begin{flushleft}
+Salva il diagramma in un formato utilizzabile con LateX
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+saveas(gcf,'Esempio_Istogramma.png');
+\end{matlabcode}
+\begin{center}
+
+\end{center}

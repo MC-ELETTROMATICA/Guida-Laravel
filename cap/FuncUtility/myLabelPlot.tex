@@ -1,0 +1,50 @@
+\section{myLabelPlot}\label{fnc:myLabelPlot}
+
+\subHeadMatlab{Sintassi}
+\lstinputlisting[linerange = {33-33}, 
+firstnumber=33,frameshape={RYRYNYYYY}{yny}{yny}{RYRYNYYYY}]
+{cap/FuncUtility/src/myLabelPlot.m}%
+
+\subHeadMatlab{Argomenti}
+\subsubsection{Input:}
+\lstinputlisting[linerange = {35-39}, firstnumber=36,basicstyle=\small]
+{cap/FuncUtility/src/myLabelPlot.m}%
+
+\begin{tcolorbox}
+    
+    \begin{description} 
+\setlength{\itemindent}{-.2in}%%%%%% identa la lista
+    \item[\textit{titlePlot:}] \verb|(1,1) string {mustBeNonempty}.|\\
+    Scalare. Rappresenta il titolo del grafico. Deve essere una necessariamente 
+    una stringa.
+    
+    \item[\textit{xAxe:}] \verb|(1,1) string = 'X'.|\\
+    Scalare. Rappresenta l'etichetta da dare all'asse \textbf{X}. Deve essere 
+    una necessariamente una stringa, se mancante si inserirà un valore di 
+    default. Se non si vuole l'etichetta, basta inserire un valore vuoto.
+    
+    \item[\textit{xAxe:}] \verb|(1,1) string = 'Y'.|\\
+    Scalare. Rappresenta l'etichetta da dare all'asse \textbf{X}. Deve essere 
+    una necessariamente una stringa, se mancante si inserirà un valore di 
+    default. Se non si vuole l'etichetta, basta inserire un valore vuoto.
+\end{description}
+\end{tcolorbox}
+
+\subsubsection{Output:}
+\textit{none}
+
+\subHeadMatlab{Descrizione istruzioni}
+\lstinputlisting[linerange = {41-44}, firstnumber=41, basicstyle=\small]
+{cap/FuncUtility/src/myLabelPlot.m}%
+
+\subHeadMatlab{CHANGELOG}
+\begin{changelog}[author=\CGC, simple, title={Modifiche alla funzione}, 
+    label=chgf:myLabelPlot, sectioncmd=\subsubsection*]
+    
+    \shortversion{v=1.0.0, date=2020-09-03,
+         changes={Inizializzazione funzione}}
+\end{changelog}
+\newpage
+\subsubsection{Listato completo}
+\lstinputlisting[title = myLabelPlot, basicstyle=\scriptsize]
+{cap/FuncUtility/src/myLabelPlot.m}%

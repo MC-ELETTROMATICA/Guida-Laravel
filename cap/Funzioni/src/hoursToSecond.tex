@@ -1,0 +1,67 @@
+
+
+\label{T_9BEF2C28}
+\matlabtitle{\textbf{hoursToSecond }}
+
+\label{H_F5B28984}
+\matlabheading{Sintassi:}
+
+\begin{matlabcode}
+function second = hoursToSecond(hours)
+\end{matlabcode}
+
+\matlabheading{Argomenti:}
+
+\begin{itemize}
+\setlength{\itemsep}{-1ex}
+   \item{\begin{flushleft} \underline{\textit{\textbf{hours}}}\textit{: Deve essere un valore non negativo. Può presentarsi anche in forma matriciale, in tal caso ogni singolo elemento verrà convertito.} \end{flushleft}}
+\end{itemize}
+
+\begin{matlabcode}
+    arguments
+        hours {mustBeNonnegative}
+    end
+\end{matlabcode}
+
+\label{H_46431DC6}
+\matlabheading{Details: }
+
+\begin{par}
+\begin{flushleft}
+La funzione è molto semplice, prende in ingresso un valore in ore e lo converte in secondi.
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+The function is very simple, it takes a value in hours and converts it into seconds
+\end{flushleft}
+\end{par}
+
+\begin{par}
+\begin{flushleft}
+La formula utilizzata nella conversione è semplicemente: 
+\end{flushleft}
+\end{par}
+
+\begin{par}
+$$s=h*3600$$
+\end{par}
+
+\begin{matlabcode}
+    second = hours * 3600;
+end
+\end{matlabcode}
+
+\begin{verbatim}
+%% CODICE
+function second = hoursToSecond(hours)
+    
+    arguments
+        hours {mustBeNonnegative}
+    end
+
+    second = hours * 3600;
+end
+\end{verbatim}
+

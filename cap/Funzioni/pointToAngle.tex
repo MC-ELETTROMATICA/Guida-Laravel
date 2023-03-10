@@ -1,0 +1,68 @@
+\section{pointToAngle}\label{fnc:pointToAngle}
+
+\subHeadMatlab{Sintassi}
+\lstinputlisting[ linerange = {47-47},
+basicstyle=\large, numbers=none]
+{cap/Elementary/src/function/pointToAngle.m}
+
+\subHeadMatlab{Descrizione breve}
+Dato un punto, o una serie di punti $P$, restituisce l'angolo che 
+si forma tra la retta passante per $O(0,0)$ e il punto $P(x,y)$, 
+e l'asse $x$.
+
+\subHeadMatlab{Argomenti}
+
+\subsubsection{Input:}
+\begin{tcolorbox}
+    \begin{description}
+\setlength{\itemindent}{-.2in}
+        
+        \item[\textit{Axes:}] \verb|(:,2) double {mustBeNumeric}|\\
+        Vettore a due colonne. In questo modo ogni conversione 
+        può essere riferita solo ad un tipo di materiale
+    \end{description}
+\end{tcolorbox}
+
+\subsubsection{Output}
+\begin{tcolorbox}
+    \begin{description}        
+        \item[\textit{radiant:}] \verb|(length(Axes)) double.|\\
+        Risultato del calcolo dell'angolo in radianti.
+        
+        \item[\textit{wrapZero2Pi:}] \verb|(length(Axes)) double.|\\
+        Risultato del calcolo dell'angolo in radianti tra [0, 2*pi].
+    \end{description}  
+\end{tcolorbox}
+
+\subHeadMatlab{Vedere anche}
+{\nameref{fnc:radMap2Pi}}
+
+\subHeadMatlab{Descrizione estesa}
+Anche se l'$arcotangente$ restituisce un valore in radianti, ho pensato di far 
+restituire alla funzione anche i gradi corrispondenti, usando le due formule:
+$$ rad = \arctan\left( \frac{y}{x} \right) \qquad
+   deg = \frac{\left( rad*180\right) }{\pi}$$
+
+\lstinputlisting[ linerange = {49-50}, firstnumber=49]
+{cap/Elementary/src/function/pointToAngle.m}
+\pagebreak
+
+\subHeadMatlab{CHANGELOG}
+\begin{changelog}[author=\CGC, simple,
+    title={Modifiche alla funzione}, 
+    label=chg:pointToAngle, sectioncmd=\subsubsection*]
+    
+    \shortversion{v=2.0.0, date=2020-09-13, 
+        changes=Inserita la validazione dell'output}
+    
+    \shortversion{v=1.0.1, date=2020-09-04, 
+        changes=Insertiti commenti}
+    
+    \shortversion{v=1.0.0, date=2020-09-03, 
+        changes=Inizializzazione funzione}
+    
+\end{changelog}
+%\newpage
+%\subsubsection{Listato completo}
+%\lstinputlisting[title = pointToAngle, basicstyle=\scriptsize]
+%{cap/Elementary/src/function/pointToAngle.m}

@@ -1,0 +1,62 @@
+\section{radMap2Pi}\label{fnc:radMap2Pi}
+
+\subHeadMatlab{Sintassi}
+\lstinputlisting[ linerange = {34-34},
+basicstyle=\large, numbers=none]
+{cap/Elementary/src/function/radMap2Pi.m}
+
+\subHeadMatlab{Descrizione breve}
+Dato un angolo in radianti, lo mappa in un range di ${0, 2\pi}$ 
+
+\subHeadMatlab{Argomenti}
+\subsubsection{Input:}
+\begin{tcolorbox}
+    \begin{description}
+\setlength{\itemindent}{-.2in}
+        
+        \item[\textit{rad:}] \verb|double {mustBeNumeric}|\\
+        Matrice. Ogni elemento rappresenta un valore in radianti 
+        da mappare in $[0,2\pi]$
+    \end{description}
+\end{tcolorbox}
+
+\subsubsection{Output}
+\begin{tcolorbox}
+    \begin{description}        
+        \item[\textit{map2pi:}] \verb|(size(rad)) double.|\\
+        Risultato della mappatura in $[0,2\pi]$.       
+    \end{description}  
+\end{tcolorbox}
+
+\subHeadMatlab{Vedere anche}
+{\nameref{fnc:pointToAngle}}
+
+\subHeadMatlab{Descrizione estesa}
+Anche se l'$arcotangente$ restituisce un valore in radianti, ho pensato di far 
+restituire alla funzione anche i gradi corrispondenti, usando le due formule:
+$$ rad = \arctan\left( \frac{y}{x} \right) \qquad
+deg = \frac{\left( rad*180\right) }{\pi}$$
+
+\lstinputlisting[ linerange = {36-40}, firstnumber=36]
+{cap/Elementary/src/function/radMap2Pi.m}
+\pagebreak
+
+\subHeadMatlab{CHANGELOG}
+\begin{changelog}[author=\CGC, simple,
+    title={Modifiche alla funzione}, 
+    label=chg:Angle, sectioncmd=\subsubsection*]
+    
+    \shortversion{v=2.0.0, date=2020-09-13, 
+        changes=Inserita la validazione dell'output}
+    
+    \shortversion{v=1.0.1, date=2020-09-04, 
+        changes=Insertiti commenti}
+    
+    \shortversion{v=1.0.0, date=2020-09-03, 
+        changes=Inizializzazione funzione}
+    
+\end{changelog}
+%\newpage
+%\subsubsection{Listato completo}
+%\lstinputlisting[title = radMap2Pi, basicstyle=\scriptsize]
+%{cap/Elementary/src/function/radMap2Pi.m}

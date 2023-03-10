@@ -1,0 +1,56 @@
+\section{hoursToSecond}\label{fnc:hoursToSecond}
+
+\subHeadMatlab{Sintassi}
+\lstinputlisting[linerange = {36-36},
+basicstyle=\large, numbers=none]
+{cap/Elementary/src/function/hoursToSeconds.m}%
+
+\subHeadMatlab{Descrizione breve}
+Calcola il numero di secondi contenute in un dato numero di ore.
+
+\subHeadMatlab{Input}
+\begin{tcolorbox}
+    \begin{description} 
+\setlength{\itemindent}{-.2in}
+    \item[\textit{hours:}] \verb| double {mustBeNonNegative}.|\\
+    Matrice. Ogni singolo elemento della matrice deve contenere un numero di 
+    ore che verrà convertito in secondi autonomamente.
+\end{description}
+\end{tcolorbox}
+
+\subHeadMatlab{Output}
+\begin{tcolorbox}
+\begin{description}
+\setlength{\itemindent}{-.2in}
+    \item[\textit{seconds:}] \verb|size(hours)| \\
+     Matrice. Numero di secondi dati alla conversione delle ore. La dimensione 
+     sarà la stessa di \verb|hours|
+\end{description}
+\end{tcolorbox}
+
+\subHeadMatlab{Vedere anche}
+{\color{gray} NONE}
+
+\subHeadMatlab{Descrizione estesa}
+La funzione è molto semplice, prende in ingresso un valore in ore 
+e lo converte in secondi. La formula utilizzata nella conversione 
+è semplicemente: 
+$$s=h*3600$$
+\lstinputlisting[linerange = {38-38}, firstnumber=46]
+{cap/Elementary/src/function/hoursToSeconds.m}%
+\pagebreak
+
+\subHeadMatlab{CHANGELOG}
+\begin{changelog}[author=\CGC, simple, title={Modifiche alla funzione}, 
+    label=chgf:hoursToSecond, sectioncmd=\subsubsection*]
+         
+    \shortversion{v=1.0.1, date=20/09/2022,
+         changes={Insertiti commenti}}
+     
+    \shortversion{v=1.0.0, date=20/09/2022,
+         changes={Inizializzazione funzione}}
+\end{changelog}
+\newpage
+%\subsubsection{Listato completo}
+%\lstinputlisting[title = hoursToSeconds, basicstyle=\scriptsize]
+%{cap/Elementary/src/function/hoursToSeconds.m}%

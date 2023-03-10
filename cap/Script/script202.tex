@@ -1,0 +1,60 @@
+\section{Script 2.02}\label{scr:script202}
+
+\subsection{Testo script}
+Utilizzare uno script, che utilizzi \nameref{fnc:massSphere} per trovare la 
+massa di determinate sfere d'acciaio ($\rho=7500\frac{Kg}{m^3}$) di raggio 
+$1mm$, $1m$ e $10m$.
+
+\subsection{Descrizione:}
+Pulizia
+\lstinputlisting[ linerange = {31-31}, firstnumber=31]
+{cap/Elementary/src/script/script202.m}
+\vspace{1em}
+
+Genero dei dati, li traspongo per comodità nella creazione della tabella.
+\lstinputlisting[ linerange = {33-33}, firstnumber=33]
+{cap/Elementary/src/script/script202.m}
+\vspace{1em}
+
+Imposto $\rho =7500$, considerando tutti i raggi riferiti a sfere d'acciaio 
+\lstinputlisting[ linerange = {34-34}, firstnumber=34]
+{cap/Elementary/src/script/script202.m}
+\vspace{1em}
+
+Calcolo per ogni elemento del vettore (che rappresenta un raggio) la relativa 
+massa.
+\lstinputlisting[ linerange = {35-35}, firstnumber=35]
+{cap/Elementary/src/script/script202.m}
+\vspace{1em}
+
+Utilizzo il ciclo per stampare le masse calcolate. 
+\lstinputlisting[ linerange = {37-41}, firstnumber=37]
+{cap/Elementary/src/script/script202.m}
+\vspace{1em}
+
+Creo e salvo la tabella. 
+\lstinputlisting[ linerange = {43-44}, firstnumber=43]
+{cap/Elementary/src/script/script202.m}
+\vspace{1em}
+
+\subsection{CHANGELOG Script202}
+\begin{changelog}[author=\CGC, simple, 
+    title={Modifiche alla funzione}, 
+    label=chgs:script202, sectioncmd=\subsubsection*]
+
+    \shortversion{v=1.3.0, date=13/09/2022,
+        changes=Inserita la tabella di output}
+    
+    \shortversion{v=1.2.0, date=13/09/2022,
+         changes=Ri-organizzato l'output}
+     
+    \shortversion{v=1.0.1, date=04/09/2022,
+         changes=Insertiti commenti}
+     
+    \shortversion{v=1.0.0, date=03/09/2022,
+         changes=Inizializzazione funzione}
+\end{changelog}
+%\newpage
+%\subsubsection{script201}
+%\lstinputlisting[title = script202, basicstyle=\scriptsize]%
+%{cap/Elementary/src/script/script202.m}

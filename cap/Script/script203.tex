@@ -1,0 +1,56 @@
+\section{Script 2.03}\label{scr:script203}
+
+\subsection{Testo script}
+Utilizzare uno script, che utilizzi \nameref{fnc:pointToAngle} 
+per trovare la  gli angoli $\theta$ per i punti  
+$$(1,1)\;(-1,1)\;(-1,-1)\;(1,-1)$$
+
+\subsection{Descrizione:}
+Pulizia ambiente di lavoro
+\lstinputlisting[linerange = {29-29}, firstnumber=29]
+{cap/Elementary/src/script/script203.m}
+\vspace{0.5em}
+
+Creo la matrice contenente i punti.
+\lstinputlisting[linerange = {31-31}, firstnumber=31]
+{cap/Elementary/src/script/script203.m}
+\vspace{1em}
+
+Calcola dimensione della variabile \verb|point|, é preferibile farlo via script 
+per una maggiore riusabilità dello script. In futuro basterà cambiare solo il 
+vettore \verb|point| per includere nuovi punti.
+\lstinputlisting[linerange = {32-32}, firstnumber=32]
+{cap/Elementary/src/script/script203.m}
+\vspace{1em}
+
+Ottengo le informazioni richieste con le due funzioni, 
+\lstinputlisting[linerange = {34-35}, firstnumber=35]
+{cap/Elementary/src/script/script203.m}
+\vspace{1em}
+
+Stampo i risultati nella \verb|COMMAND WINDOW|
+\lstinputlisting[linerange = {37-45}, firstnumber=37]
+{cap/Elementary/src/script/script203.m}
+\vspace{1em}
+
+\subsection{CHANGELOG Script203}
+\begin{changelog}[author=\CGC, simple, title={Modifiche allo script}, 
+    label=chgs:script203, sectioncmd=\subsubsection*]
+    
+    \shortversion{v=1.3.0, date=13/09/2022, 
+        changes= Inserita la tabella di output}
+    
+    \shortversion{v=1.2.0, date=13/09/2022,
+        changes= Ri-organizzato l'output}
+    
+    \shortversion{v=1.0.1, date=04/09/2022, 
+        changes= Insertiti commenti}
+    
+    \shortversion{v=1.0.0, date=03/09/2022,
+        changes= Inizializzazione script}
+    
+\end{changelog}
+%\newpage
+%\subsubsection{script201}
+%\lstinputlisting[title = script201, basicstyle=\scriptsize]%
+%{cap/Elementary/src/script/script201.m}

@@ -1,0 +1,60 @@
+\section{Script 2.11}\label{sec:script211}
+
+\subsection{Descrizione:}
+Pulizia
+\begin{lstlisting}[firstnumber=1]
+clear; clc; close('all');
+\end{lstlisting}
+\vspace{1em}
+
+\subsubsection{Quesito a)}
+Importazione dei dati con assegnazioni alle variabili. Si preferisce questa 
+funzione per la sua semplicita' di utilizzo nell'assegnazione alle variabili.
+\begin{lstlisting}[firstnumber=2]
+A = importdata('../data/trajectory.dat');
+t = A(:,1); x = A(:,2); y = A(:,3);
+\end{lstlisting}
+\vspace{1em}
+
+\subsubsection{Quesito b)}
+Grafico \texttt{x(t)}
+\begin{lstlisting}[firstnumber=6]
+subplot(3,1,1); plot(t,x);
+title('x(t)'); xlabel('t'); ylabel('x');
+\end{lstlisting}
+\vspace{1em}
+
+\subsubsection{Quesito c)}
+Grafico y\texttt{(t)} \dots
+\begin{lstlisting}[firstnumber=9]
+subplot(3,1,2); plot(t,y);
+title('y(t)'); xlabel('t'); ylabel('y');
+\end{lstlisting}
+\vspace{1em}
+
+\dots e \texttt{y(x)}
+\begin{lstlisting}[firstnumber=9]
+subplot(3,1,3); plot(x,y);
+title('y(x)'); xlabel('x'); ylabel('y');
+\end{lstlisting}
+\vspace{1em}
+
+Salvo i grafici precedentemente creati.
+\begin{lstlisting}[firstnumber=9]
+saveas(gcf,'../../img/script211.png');
+\end{lstlisting}
+
+\subsection{CHANGELOG Script211}
+\begin{changelog}[author=\CGC, simple, 
+    title={Modifiche allo script}, 
+    label=chgs:script211, sectioncmd=\subsubsection*]
+    
+    \shortversion{v=1.2.0, date=2020-09-13, 
+        changes=Organizzato l'output}
+    
+    \shortversion{v=1.0.1, date=2020-09-04, 
+        changes=Insertiti commenti}
+    
+    \shortversion{v=1.0.0, date=2020-09-03,
+        changes=Inizializzazione script}
+\end{changelog}

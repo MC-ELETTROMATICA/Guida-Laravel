@@ -1,0 +1,56 @@
+\section{unitVectorD}\label{fnc:unitVectorD}
+
+\subHeadMatlab{Sintassi}
+\lstinputlisting[linerange = {40-40}, basicstyle=\large,
+numbers=none]
+{cap/Elementary/src/function/unitVectorD.m}%
+
+\subHeadMatlab{Argomenti}
+\subsubsection{Input:}
+\begin{tcolorbox}
+    \begin{description} 
+        \setlength{\itemindent}{-.2in}%%%%%% identa la lista
+        
+        \item[\textit{angleD:}] \verb| double.|\\
+        Matrice. Angolo in gradi, ogni singolo elemento della matrice verrà 
+        convertito autonomamente.
+    \end{description}
+\end{tcolorbox}
+
+\subsubsection{Output:}
+\begin{tcolorbox}
+    \begin{description}
+        \setlength{\itemindent}{-.2in}
+        
+        \item[\textit{x:}] \verb|double| \\
+        Matrice che contiene le coordinate X dei punti trovati
+        
+        \item[\textit{y:}] \verb|double| \\
+        Matrice che contiene le coordinate Y dei punti trovati
+    \end{description}
+\end{tcolorbox}
+
+\subHeadMatlab{Vedere anche}
+{\nameref{fnc:unitVectorR}}
+
+\subHeadMatlab{Descrizione estesa}
+Ho usato la formula, $$(u_x , u_y)=(\cos\theta,\sin\theta)$$ 
+dove $\theta$ e' dato in gradi.
+\lstinputlisting[linerange = {42-43}, firstnumber=42]
+{cap/Elementary/src/function/unitVectorD.m}%
+\pagebreak
+
+\subHeadMatlab{CHANGELOG}
+\begin{changelog}[author=\CGC, simple, title={Modifiche alla funzione}, 
+    label=chgf:unitVectorD, sectioncmd=\subsubsection*]
+    
+    \shortversion{v=1.0.1, date=05/09/2022,
+        changes={Insertiti commenti}}
+    
+    \shortversion{v=1.0.0, date=05/09/2022,
+        changes={Inizializzazione funzione}}
+\end{changelog}
+\newpage
+%\subsubsection{Listato completo}
+%\lstinputlisting[title = unitVectorD, basicstyle=\scriptsize]
+%{cap/Elementary/src/function/unitVectorD.m}%{\tiny }

@@ -1,0 +1,55 @@
+\section{Ex2.03 Angle}\label{sec:Angle}
+
+\subsection{Testo esercizio}
+\begin{itemize}
+    \item[a)]Scrivere una funzione che dato un punto $(x, y)$ restituisca 
+    l'angolo $\theta$ dall'asse $x$ usando la formula
+    $$\theta = arctan\frac{y}{x}$$
+    
+    \item[b)]Trova gli angoli $\theta$ per i punti
+    $$(1,1)\;(-1,1)\;(-1,-1)\;(1,-1)$$
+    
+    \item[c)] Come cambieresti la funzione per restituire valori di $\theta$ 
+    nell'intervallo $[0, 2\pi]$?
+\end{itemize}
+
+\subsection{Svolgimento}
+L'esercizio è stato di complessità media. I primi due punti sono stati 
+semplici, applicando la funzione data. Per il punto \textit{c)} dopo 
+un'accurata ricerca, ho scelto di utilizzare la funzione \verb|mod()| con 
+l'accortezza in caso di:
+\begin{description}
+    \item[$mod=0 \& radianti > 0$] di riportare il risultato a $2\pi$
+    
+    \item[$mod=0 \& radianti < 0$] di mantenere il risultato a $0$
+\end{description}
+
+\subsection{Risultati}
+\subsubsection{Testuali}
+\color{gray}
+\begin{verbatim}
+>> script203
+Il punto ( 1,  1) ha l'angolo di:  0.7854°,  0.0137 rad,  0.0137 rad in [0,2pi]
+Il punto (-1,  1) ha l'angolo di: -0.7854°, -0.0137 rad,  6.2695 rad in [0,2pi]
+Il punto (-1, -1) ha l'angolo di:  0.7854°,  0.0137 rad,  0.0137 rad in [0,2pi]
+Il punto ( 1, -1) ha l'angolo di: -0.7854°, -0.0137 rad,  6.2695 rad in [0,2pi]
+>> 
+\end{verbatim}
+\color{black}
+
+\subsubsection{Tabella}    
+\input{cap/Elementary/src/data/tex/table203}
+\pagebreak
+
+\subsection{Codice usati}
+\lstinputlisting[title = {\nameref{fnc:pointToAngle}},
+linerange={47-52}]
+{cap/Elementary/src/function/pointToAngle.m}
+
+\lstinputlisting[title = {\nameref{scr:script203}},
+linerange={31-45}]
+{cap/Elementary/src/script/script203.m}
+
+\lstinputlisting[title = {\nameref{fnc:radMap2Pi}},
+linerange={33-41}]
+{cap/Elementary/src/function/radMap2Pi.m}

@@ -1,0 +1,57 @@
+\section{Ex2.04 Unit vector}\label{sec:Unit_vector}
+
+\subsection{Testo esercizio}
+\begin{itemize}
+    \item[a)] Scrivere una funzione che restituisce il vettore unitario 
+    bidimensionale, $(u_x , u_y)$, corrispondente a un angolo $\theta$ con 
+    l'asse $x$. Puoi usare la formula, $$(u_x , u_y)=(\cos\theta,\sin\theta)$$ 
+    dove $\theta$ e' dato in radianti.
+    
+    \item[b)] Trova gli angoli $\theta$ per i vettori 
+    $$0,\frac{\pi}{6},\frac{\pi}{3},\frac{\pi}{2},\frac{3\pi}{2}$$     
+    
+    \item[3)] Riscrivi la formula per avere l'argomento in gradi.
+\end{itemize}
+
+\subsection{Svolgimento}
+La difficoltà dell'esercizio è stata quella di trovare delle funzioni e formule 
+che andassero bene per i vari tipi di input \verb|radianti/gradi|. Dopo una 
+piccola ricerca, ho trovato le funzioni \MATLAB \verb|sin(x), cos(x)| e 
+\verb|sind(x), cosd(x)| per \verb|x| rispettivamente \verb|radianti| e 
+\verb|gradi|.
+
+\subsection{Risultato}
+\color{gray}
+\begin{verbatim}
+L'angolo di +00 rad ha coordinate (+1.00, +0.00)
+L'angolo di +00 gra ha coordinate (+1.00, +0.00)
+
+L'angolo di +5.24e-01 rad ha coordinate (+0.87, +0.50)
+L'angolo di +3.00e+01 gra ha coordinate (+0.87, +0.50)
+
+L'angolo di +1.05e+00 rad ha coordinate (+0.50, +0.87)
+L'angolo di +6.00e+01 gra ha coordinate (+0.50, +0.87)
+
+L'angolo di +1.57e+00 rad ha coordinate (+0.00, +1.00)
+L'angolo di +90 gra ha coordinate (+0.00, +1.00)
+
+L'angolo di +4.71e+00 rad ha coordinate (-0.00, -1.00)
+L'angolo di +270 gra ha coordinate (+0.00, -1.00)
+\end{verbatim}
+\color{black}
+\subsubsection{Tabella}    
+\input{cap/Elementary/src/data/tex/table204}
+\newpage
+
+\subsection{Codice esercizio}
+\lstinputlisting[caption = {Funzione unitVectorR},
+linerange={40-45}]%
+{cap/Elementary/src/function/unitVectorR.m}
+
+\lstinputlisting[title = {Script Ex2.04},
+linerange={3-17}]%
+{cap/Elementary/src/script/script204.m}
+
+\lstinputlisting[caption = {Funzione unitVectorD},
+linerange={38-43}]%
+{cap/Elementary/src/function/unitVectorD.m}

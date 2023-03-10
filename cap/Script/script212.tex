@@ -1,0 +1,95 @@
+\section{Script 2.12}\label{scr:script212}
+
+\subsection{Descrizione:}
+Pulizia
+\begin{lstlisting}[firstnumber=1]   
+    clear; clc; close('all');
+\end{lstlisting}
+\vspace{1em}
+
+Importazione dei dati con assegnazioni alle variabili. Si preferisce questa 
+funzione per la sua semplicità di utilizzo nell'assegnazione alle variabili.
+\begin{lstlisting}[firstnumber=2]
+    A = importdata('../data/velocityy.dat');
+    t = A(:,1);
+    v = A(:,2);
+\end{lstlisting}
+\vspace{1em}
+
+Creazione delle variabili di ausilio allo script. La variabile \verb|dimT| non 
+è essenziale, ma permette la modifica dei dati nel file \verb|velocityy.dat| 
+senza dover poi stravolgere la funzione.
+\begin{lstlisting}[firstnumber=5]
+    dimT = length(t);
+       y = zeros(dimT, 1);
+      dv = zeros(dimT, 1);
+\end{lstlisting}
+\vspace{1em}
+
+Genero il primo grafico con i dati del file.
+\begin{lstlisting}[firstnumber=8]
+    subplot(3,1,1)
+    plot(t,v);
+    title('v(t)'); xlabel('t'); ylabel('v');
+\end{lstlisting}
+\vspace{1em}
+
+Tenendo conto della formula, con un ciclo \texttt{for} calcolo \texttt{y(t).}
+\begin{lstlisting}[firstnumber=11]
+      y(1) = 0;
+    for ii = 2:dimT
+         tmp1 = t(ii) - t(ii-1);
+        y(ii) = y(ii-1) + v(ii-1) * (tmp1);
+    end; clear('ii', 'tmp1');
+\end{lstlisting}
+\vspace{1em}
+
+
+Il testo è risultato un po' criptico. Da quel che ho capito, ho calcolato la 
+derivata della velocità $\dfrac{dv}{dt}$\vspace{0.5em}
+\begin{lstlisting}[firstnumber=16]
+     dv(1) = 0;
+    for jj = 2:dimT
+          tmp1 = ( y(jj) - y(jj-1) );
+          tmp2 = ( t(jj) - t(jj-1) );
+        dv(jj) = ( tmp1 / tmp2 ) / tmp2;
+    end; clear('jj', 'tmp1', 'tmp2');
+\end{lstlisting}
+\vspace{1em}
+\pagebreak
+Metto a grafico \texttt{y(t)}, \dots
+\begin{lstlisting}[firstnumber=22]
+    subplot(3, 1, 2);
+    plot(t, y);
+    title('y(t)'); xlabel('t'); ylabel('y');
+\end{lstlisting}
+\vspace{1em}
+
+\dots e $\mathrm{dv}$
+\begin{lstlisting}[firstnumber=8]
+    subplot(3, 1, 3);
+    plot(t, dv);
+    title('dv'); xlabel('t'); ylabel('dv');
+\end{lstlisting}
+\vspace{1em}
+
+\subsection{CHANGELOG Script212}
+\begin{changelog}[author=\CGC, simple, 
+    title={Modifiche allo script}, 
+    label=chgs:script212, sectioncmd=\subsubsection*]
+    
+    \shortversion{v=1.3.0, date=2020-09-13, 
+        changes=Inserita la tabella di output}
+    
+    \shortversion{v=1.2.0, date=2020-09-13, 
+        changes=Organizzato l'output}
+    
+    \shortversion{v=1.0.1, date=2020-09-04, 
+        changes=Insertiti commenti}
+    
+    \shortversion{v=1.0.0, date=2020-09-03,
+        changes=Inizializzazione script}   
+\end{changelog}
+\newpage\subsubsection{script212}
+\lstinputlisting[title = script212, basicstyle=\scriptsize]%
+{cap/Elementary/src/script/script212.m}

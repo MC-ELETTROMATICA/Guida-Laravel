@@ -1,0 +1,75 @@
+
+\matlabtitle{\textbf{Ex 2.02}}
+
+\matlabheading{Testo esercizio}
+
+\begin{par}
+\begin{flushleft}
+Utilizzare uno script, che utilizzi massSphere per trovare la massa di determinate sfere d'acciaio ($\rho =7500\frac{Kg}{m^3 }$) di raggio $1mm$, $1m$ e $10m$.
+\end{flushleft}
+\end{par}
+
+\matlabheading{Descrizione:}
+
+\begin{par}
+\begin{flushleft}
+Pulizia
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+myClear(2);
+\end{matlabcode}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Genero dei dati, li traspongo per comodità della creazione della tabella.
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+radius = [0.001 1 10]';
+
+\end{matlabcode}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Imposto $\rho =7500$ 
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+   rho = 7500;
+\end{matlabcode}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Calcolo per ogni elemento del vettore (che rappresenta un raggio) la relativa massa.
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+  mass = massSphere( rho, radius);
+\end{matlabcode}
+
+
+\vspace{1em}
+\begin{par}
+\begin{flushleft}
+Utilizzo il ciclo per stampare le masse calcolate.
+\end{flushleft}
+\end{par}
+
+\begin{matlabcode}
+for ii = 1 : length(radius)
+    fprintf('Una sfera d''acciaio');
+    fprintf(' di raggio %5.2e m', radius(ii));
+    fprintf(' ha massa di %.2e Kg\n', mass(ii));
+end
+\end{matlabcode}

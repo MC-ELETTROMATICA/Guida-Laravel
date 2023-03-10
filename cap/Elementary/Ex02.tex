@@ -1,0 +1,42 @@
+\section{Ex2.02 Mass sphere}\label{sec:Mass_sphere}
+
+\subsection{Testo esercizio}
+\begin{itemize}
+    \item[a)] Scrivi una funzione che calcoli la massa di una sfera 
+    dato il suo raggio, $r$, e la densità di massa, $\rho$, secondo la 
+    formula $$m=\rho\frac{4}{3}\pi r^3$$
+    
+    \item[b)] Usa uno script per trovare la massa di una sfera di 
+    acciaio ($\rho=7500\frac{Kg}{m^3}$) di raggio $1mm$, $1m$ e $10m$.
+\end{itemize}
+
+\subsection{Svolgimento}
+L'esercizio \'e stato semplice. Inizialmente avevo inserito $\rho=7500$ 
+direttamente dentro la funzione, successivamente ho reputato opportuno 
+inserire il dato via argomenti per rendere la funzione utile per 
+qualsiasi tipo di sfera.
+
+\subsection{Risultati}
+\subsubsection{Testuali}
+\color{gray}
+\begin{verbatim}
+>> scriptMassa
+Una sfera d'acciaio di raggio 1.00e-03 m ha massa di 3.14e-05 Kg
+Una sfera d'acciaio di raggio 1.00e+00 m ha massa di 3.14e+04 Kg
+Una sfera d'acciaio di raggio 1.00e+01 m ha massa di 3.14e+07 Kg
+>> 
+\end{verbatim}
+\color{black} 
+
+\subsubsection{Tabella}    
+\input{cap/Elementary/src/data/tex/table202}
+\newpage
+
+\subsection{Codici usati}
+\lstinputlisting[caption = {\nameref{fnc:massSphere}},
+linerange = {48-52}]
+{cap/Elementary/src/function/massSphere.m}
+
+\lstinputlisting[title = {\nameref{scr:script202}},
+linerange = {33-41}]
+{cap/Elementary/src/script/script202.m}
